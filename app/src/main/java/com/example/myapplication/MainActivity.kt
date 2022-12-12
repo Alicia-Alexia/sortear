@@ -10,14 +10,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val sortear : Button = findViewById(R.id.button_sortear)
-        sortear.setOnClickListener { sortearNumeros() }
+        val sorter : Button = findViewById(R.id.button_sortear)
+        sorter.setOnClickListener { sortearNumeros() }
     }
     private fun sortearNumeros() {
-         val resultado :TextView= findViewById(R.id.text_nenhum_numero_selecionado)
-         val sorteador = Random.nextInt(0, 100)+1
-         resultado.text = "Número sorteado foi: " + sorteador
-         resultado.contentDescription = sorteador.toString()
+         val result :TextView= findViewById(R.id.text_nenhum_numero_selecionado)
+         val sorted = Random.nextInt(0, 100)+1
+        ("Número sorteado foi: $sorted").also { result.text = it }
          }
      }
 
